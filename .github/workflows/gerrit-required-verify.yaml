@@ -87,10 +87,28 @@ jobs:
     secrets:
       GERRIT_SSH_REQUIRED_PRIVKEY: ${{ secrets.GERRIT_SSH_REQUIRED_PRIVKEY }}
 
+  run-verify-script:
+    needs: clear-vote
+    runs-on: ubuntu-latest
+    steps:
+      - name: Gerrit Checkout
+        # yamllint disable-line rule:line-length
+        uses: lfit/checkout-gerrit-change-action@57bf0435f739fbbc7ce4cc85c9c3b8a386c6f84b  # v0.6
+        with:
+          gerrit-refspec: ${{ inputs.GERRIT_REFSPEC }}
+          gerrit-project: ${{ inputs.GERRIT_PROJECT }}
+          gerrit-url: ${{ vars.GERRIT_URL }}
+          delay: "0s"
+          submodules: "true"
+      - name: Run verify.sh
+        if: ${{ hashFiles('verify.sh') != '' }}
+        run: |
+          ./verify.sh
+
   vote:
     if: ${{ always() }}
     # yamllint enable rule:line-length
-    needs: [clear-vote, info-yaml-verify]
+    needs: [clear-vote, info-yaml-verify, run-verify-script]
     runs-on: ubuntu-latest
     steps:
       - uses: technote-space/workflow-conclusion-action@v3
