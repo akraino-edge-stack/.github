@@ -16,6 +16,24 @@
       "message": "Why are you explicitly setting a branch? The `gerrit-refspec` should take care of everything I would expect, your only real issue was that you weren\u0027t setting the repository given that this is a required verify",
       "revId": "135ba818f396e56e008e7864404a5292a664aa62",
       "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "05f780a4_34ca3ce5",
+        "filename": ".github/workflows/gerrit-required-verify.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 133
+      },
+      "writtenOn": "2024-01-17T18:03:22Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "b30c0e40_e8842795",
+      "revId": "135ba818f396e56e008e7864404a5292a664aa62",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9"
     }
   ]
 }
