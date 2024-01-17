@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f4836f2e_945c0882",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2024-01-17T18:06:45Z",
+      "side": 1,
+      "message": "Sorry, patch 1 was actually correct",
+      "revId": "77a87470c07a51dfa58dc91fa7f40c50b9bc39c8",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9"
+    }
+  ]
+}
